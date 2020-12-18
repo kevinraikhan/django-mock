@@ -87,25 +87,43 @@ def profile(request):
 
 
 def schedule(request):
-    return JsonResponse([
-        "00:00:00",
-        "01:00:00",
-        "02:00:00",
-        "03:00:00",
-        "04:00:00",
-        "05:00:00",
-        "06:00:00",
-        "11:00:00",
-        "12:00:00",
-        "13:00:00",
-        "14:00:00",
-        "15:00:00",
-        "16:00:00",
-        "17:00:00",
-        "18:00:00",
-        "23:00:00"
-    ],
-        safe=False)
+    if request.GET.get('date', '') != '' and request.GET.get('slot', '') != '':
+        return JsonResponse([
+            "00:00:00",
+            "01:00:00",
+            "02:00:00",
+            "03:00:00",
+            "04:00:00",
+            "05:00:00",
+            "06:00:00",
+            "11:00:00",
+            "12:00:00",
+            "13:00:00",
+            "14:00:00",
+            "15:00:00",
+            "16:00:00",
+            "17:00:00",
+            "18:00:00",
+            "23:00:00"
+        ],
+            safe=False)
+
+    elif request.GET.get('date', '') != '' and request.GET.get('slot', '') == '':
+        print(request.GET)
+        return JsonResponse([
+            {
+                "id": "a3acff4c-b461-4e3c-9431-8c324d569c8e",
+                "status": "string",
+                "date": "2020-12-16",
+                "startTime": "07:00:00",
+                "endTime": "10:00:00",
+                "quantity": 200,
+                "loNumber": "string"
+            }
+        ],
+            safe=False)
+    else:
+        return JsonResponse({'message': 'invalid'})
 
 
 def jetty(request):
