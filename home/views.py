@@ -113,11 +113,28 @@ def schedule(request):
         return JsonResponse([
             {
                 "id": "a3acff4c-b461-4e3c-9431-8c324d569c8e",
-                "status": "string",
+                "status": "Approved",
                 "date": "2020-12-16",
-                "startTime": "07:00:00",
-                "endTime": "10:00:00",
+                "startTime": "15:00:00",
+                "endTime": "17:00:00",
                 "quantity": 200,
+                "loNumber": "string"
+            }, {
+                "id": "a3acff4c-abc-4e3c-9431-8c324d569c8e",
+                "status": "Processed",
+                "date": "2020-12-16",
+                "startTime": "05:00:00",
+                "endTime": "11:00:00",
+                "quantity": 400,
+                "loNumber": "string"
+            },
+            {
+                "id": "a3acff4c-def-4e3c-9431-8c324d569c8e",
+                "status": "Approved",
+                "date": "2020-12-16",
+                "startTime": "20:00:00",
+                "endTime": "22:00:00",
+                "quantity": 300,
                 "loNumber": "string"
             }
         ],
